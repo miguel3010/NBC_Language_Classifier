@@ -1,7 +1,7 @@
 <form>
 	<div class="form-group">
-	  <label for="textArea">Write Some text</label>
-	  <textarea class="form-control" id="textArea" rows="10" maxlength="1000"></textarea>
+		<label for="textArea">Write Some text</label>
+		<textarea class="form-control" [(ngModel)]="txt" name="txt" (input)="onModelChange()" id="textArea" rows="10" maxlength="1000"></textarea>
 	</div>
-	<button class="btn btn-primary " type="submit">Classify</button>
-  </form>
+	<button class="btn btn-primary" (click)="tryClassify()" type="submit">Classify</button>
+</form>

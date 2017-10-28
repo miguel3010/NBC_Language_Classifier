@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" routerLink="" >Naive Bayes Classifier Applied for Language Classification</a>
+	<a class="navbar-brand" routerLink="">Naive Bayes Classifier Applied for Language Classification</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 	 aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
 
 	<ul class="navbar-nav">
 		<li class="nav-item">
-			<a class="nav-link" routerLink="knowledge" >Knowledge</a>
+			<a class="nav-link" routerLink="knowledge">Knowledge</a>
 		</li>
 	</ul>
 </nav>
@@ -15,10 +15,10 @@
 <div class="container-fluid" style="margin-top: 20px;">
 	<div class="row">
 		<div class="col col-md-7">
-			<app-text-area>Cargando...</app-text-area>
+			<app-text-area [p]="pred">Cargando...</app-text-area>
 		</div>
 		<div class="col col-md-4">
-			<app-predition-display>Cargando...</app-predition-display>
+			<app-predition-display #pred>Cargando...</app-predition-display>
 		</div>
 	</div>
 </div>

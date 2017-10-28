@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.footer {
+  background: rgb(42, 42, 43);
+  padding: 10px 0;
+}
+.footer a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #70726F;
+  transition: all .5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid #70726F;
+}
+.footer a:hover {
+  color: white;
+}

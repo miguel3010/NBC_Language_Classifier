@@ -9,10 +9,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Threading;
+using System.Web.Http.Cors;
 
 namespace NBC_Idiomas.Controllers
 {
-   
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ClassifierController : ApiController
     {
         [HttpPost]
@@ -24,6 +25,8 @@ namespace NBC_Idiomas.Controllers
                 Categoria cat = new Categoria();
                 cat.setnombre(idioma.nombre);
                 CategoriaDAO.getInstance().create(cat);
+                idioma.id = cat.getid();
+                return Ok(idioma);
             }
             return Ok();
         }

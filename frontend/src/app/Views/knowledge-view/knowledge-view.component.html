@@ -16,10 +16,10 @@
 <div class="container-fluid" style="margin-top: 20px;">
 	<div class="row">
 		<div class="col col-md-7">
-			<app-add-knowledge>Cargando...</app-add-knowledge>
+			<app-add-knowledge #know >Cargando...</app-add-knowledge>
 		</div>
 		<div class="col col-md-5">
-			<app-add-category>Cargando...</app-add-category>
+			<app-add-category [listIdiomas]="know.supportedLanguages" >Cargando...</app-add-category>
 		</div>
 	</div>
 </div>

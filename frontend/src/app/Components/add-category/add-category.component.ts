@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ApiService } from './../../Services/api.service';
+import { Idioma } from './../../Model/Idioma';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-add-category',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor() { }
+  idioma: Idioma;
+  @Input('listIdiomas') listIdiomas: Idioma[];
+
+  constructor(private api: ApiService) {
+    this.idioma = new Idioma();
+  }
 
   ngOnInit() {
+  }
+
+  tryAddNewIdioma() {
+    this.idioma.id = 0;
+    if (this.idioma.nombre != null
+      && this.idioma.nombre.length > 0) {
+      this.api.postIdioma(this.idioma).subscribe(response => {
+        this.listIdiomas.push(response.json());
+        this.idioma = new Idioma();
+        alert('Added new Language');
+      }, error => {
+        alert('Add new Language Failed');
+      });
+    } else {
+      alert('Give a name for the language');
+
+    }
   }
 
 }

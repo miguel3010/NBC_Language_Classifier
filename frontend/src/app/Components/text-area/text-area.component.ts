@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { PreditionDisplayComponent } from './../predition-display/predition-display.component';
+import { ApiService } from './../../Services/api.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text-area',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextAreaComponent implements OnInit {
 
-  constructor() { }
+  @Input('p') p: PreditionDisplayComponent;
+  txt: string;
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
   }
+  tryClassify() {
+    if (this.txt != null
+      && this.txt.length > 0) {
+      this.api.classify(this.txt).subscribe(response => {
+        this.p.setTendencies(response.json());
+      }, error => {
+        alert('Server failed');
+      });
+    } else {
+      alert('Provide Text for Classification');
+    }
+  }
 
+  onModelChange() {
+    this.p.onTextEdit();
+  }
 }

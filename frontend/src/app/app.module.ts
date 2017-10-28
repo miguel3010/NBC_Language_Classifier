@@ -1,9 +1,10 @@
+import { ApiService } from './Services/api.service';
 import { AuthGuard } from './Auth/auth-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { RouterModule, Routes  } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeViewComponent } from './/Views/home-view/home-view.component';
 import { TextAreaComponent } from './/Components/text-area/text-area.component';
@@ -11,7 +12,8 @@ import { PreditionDisplayComponent } from './/Components/predition-display/predi
 import { KnowledgeViewComponent } from './/Views/knowledge-view/knowledge-view.component';
 import { AddKnowledgeComponent } from './/Components/add-knowledge/add-knowledge.component';
 import { AddCategoryComponent } from './/Components/add-category/add-category.component';
-
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 const views: Routes = [
   {
@@ -47,10 +49,13 @@ const views: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(views)
+    RouterModule.forRoot(views),
+    HttpModule,
+    FormsModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

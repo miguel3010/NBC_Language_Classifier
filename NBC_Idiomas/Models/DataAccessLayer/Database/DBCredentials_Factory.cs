@@ -13,7 +13,7 @@
         {
             DBCredentials dc = new DBCredentials()
             {
-                DBName = "nbc",
+                DBName = "nbc_idiomas",
                 Url = "localhost",
                 Login = "root",
                 Password = ""
