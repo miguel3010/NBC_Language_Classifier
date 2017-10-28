@@ -1,0 +1,59 @@
+﻿
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<div class="container" style="margin-top:25px;">
+    <div class="row">
+        <div class="col-xs-12 col-md-5 col-md-offset-3">
+            <label for="comment">Texto a Probar...</label>
+            <textarea id="txtare" class="form-control" rows="5" id="comment"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <a class="btn btn-primary" onclick="javascript:provar()"> Probar </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function provar() {
+        var txt = $("#txtare").val();
+        if (txt != undefined) {
+            var urle = "http://miguel3010-001-site1.itempurl.com/api/Classifier/classify?testTxt=" + txt;
+
+            /* $.ajax({
+                 url: urle,
+                 crossDomain: true,
+                 method: 'POST',
+                 dataType: 'json',
+                 contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                     alert(data[0].idioma.nombre);
+                 }, error: function (data) {
+                     alert("No se reconoce idioma");
+                 }
+             });*/
+            callajax(txt);
+        }
+    }
+    function callajax(txt) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.twitter.com/1.1/statuses/update.json",
+            "method": "POST",
+            "Content-Type": "application/json",
+            "headers": {
+                "cache-control": "no-cache",
+                "postman-token": "81c1bbb1-585d-318d-4b6e-d35d7df674cf"
+            }
+        }
+
+        $.ajax(settings).done(function (response) {
+            alert("recibido");
+            alert(data[0].idioma.nombre);
+
+        });
+    }
+
+</script>
