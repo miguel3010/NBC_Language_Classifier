@@ -13,7 +13,7 @@ using System.Web.Http.Cors;
 
 namespace NBC_Idiomas.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+   //  [EnableCors(origins: "*", headers: "*", methods: "*")] //development
     public class ClassifierController : ApiController
     {
         [HttpPost]
