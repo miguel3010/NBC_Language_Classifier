@@ -3,6 +3,9 @@
 ## Description  
 
 Naive Bayes Algorithm used for classify Languages
+## Screenshots
+![Image](https://github.com/miguel3010/NBC_Language_Classifier/blob/master/screenshot1.png)
+![Image](https://github.com/miguel3010/NBC_Language_Classifier/blob/master/Screenshot2.png)
 
 ###  Run
 Open a terminar in the repository (only dev mode)
