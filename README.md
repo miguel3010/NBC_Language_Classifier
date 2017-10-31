@@ -30,5 +30,5 @@ Add to all local url in index.html the prefix static/<prev_url>
 
 ## Authors
 
-* **Miguel Ángel Campos** - *Fullstack Developer* - [LinkedIn](www.linkedin.com/in/miguel-angelcampos) 
-* **Efraín Pérez**(Java Edition) - *Fullstack Developer* - [LinkedIn](https://www.linkedin.com/in/efrain-perez-824bbb148/)
+* **Miguel Ángel Campos** - *Fullstack Developer* - [Linkedin](https://www.linkedin.com/in/miguel-angelcampos) 
+* **Efraín Pérez**(Java Edition) - *Fullstack Developer* - [Linkedin](https://www.linkedin.com/in/efrain-perez-824bbb148/)
